@@ -17,6 +17,7 @@ __pycache__/
 data/
 logs/
 *.log
+!contributions.log
 
 # trading bot outputs
 trades/

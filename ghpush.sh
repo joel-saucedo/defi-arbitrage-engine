@@ -70,18 +70,18 @@ if [ ! -d ".git" ]; then
         rm -rf temp_clone
         print_success "repository cloned and configured"
     else
-        print_status "repository doesn't exist. creating new private repo..."
+        print_status "repository doesn't exist. creating new public repo..."
         
         # Initialize git repository
         git init
         
-        # Create repository on GitHub (private by default)
-        gh repo create "$REPO_NAME" --private --source=. --remote=origin --push=false
+        # Create repository on GitHub (public by default)
+        gh repo create "$REPO_NAME" --public --source=. --remote=origin --push=false
         
         # Set up remote
         git remote add origin "https://github.com/$USERNAME/$REPO_NAME.git"
         
-        print_success "private repository created: https://github.com/$USERNAME/$REPO_NAME"
+        print_success "public repository created: https://github.com/$USERNAME/$REPO_NAME"
     fi
 else
     print_status "git repository detected"
@@ -129,7 +129,7 @@ focus on algorithmic optimization, mathematical modeling, and web3 protocol anal
 ### experimental components
 - genetic algorithm route optimization
 - reinforcement learning for dynamic strategy adaptation
-- zero-knowledge proof integration for private arbitrage
+- zero-knowledge proof integration for public arbitrage
 - cross-chain bridge vulnerability analysis
 - automated market maker curve research
 

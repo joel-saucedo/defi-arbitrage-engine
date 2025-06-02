@@ -1,0 +1,42 @@
+# byte compiled / optimized / dll files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# environment variables
+.env
+.env.local
+
+# jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# vscode settings
+.vscode/
+
+# data and logs
+data/
+logs/
+*.log
+
+# trading bot outputs
+trades/
+backtest_results/
+
+# private keys and secrets
+keys/
+secrets/
+
+# os generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# research artifacts
+research_data/
+*.pkl
+*.csv
+*.json

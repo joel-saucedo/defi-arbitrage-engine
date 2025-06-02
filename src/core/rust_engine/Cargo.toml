@@ -1,0 +1,26 @@
+[package]
+name = "mev_engine"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "mev_engine"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.20", features = ["extension-module"] }
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+reqwest = { version = "0.11", features = ["json"] }
+rayon = "1.7"
+crossbeam = "0.8"
+dashmap = "5.4"
+web3 = "0.19"
+ethers = "2.0"
+num-bigint = "0.4"
+primitive-types = "0.12"
+
+[dependencies.pyo3-asyncio]
+version = "0.20"
+features = ["tokio-runtime"]

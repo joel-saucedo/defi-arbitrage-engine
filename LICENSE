@@ -1,0 +1,47 @@
+MIT License
+
+Copyright (c) 2025 Ethereum MEV Research Laboratory
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+RESEARCH AND EDUCATIONAL USE DISCLAIMER:
+
+This software is developed for research and educational purposes in the field
+of decentralized finance, blockchain technology, and computational finance.
+
+Users are responsible for ensuring compliance with all applicable laws and
+regulations in their jurisdiction. The authors do not endorse or encourage
+any illegal activities including but not limited to:
+- Market manipulation
+- Front-running attacks
+- Sandwich attacks
+- Flash loan exploits
+- Any form of financial fraud
+
+This software should be used responsibly for:
+- Academic research
+- Educational purposes
+- Protocol development
+- Security analysis
+- Performance optimization research
+
+Users must conduct their own legal review and obtain appropriate licenses
+and permissions before deploying this software in production environments.

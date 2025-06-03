@@ -1,33 +1,61 @@
-# byte compiled / optimized / dll files
+# compilation artifacts
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+*.o
+*.a
+*.dylib
+*.dll
 
-# environment variables
+# build directories
+build/
+target/
+dist/
+node_modules/
+cmake_install.cmake
+CMakeCache.txt
+CMakeFiles/
+Makefile
+
+# development environment
 .env
 .env.local
-
-# jupyter notebook checkpoints
-.ipynb_checkpoints/
-
-# vscode settings
+.env.prod
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# data and logs
-data/
-logs/
+# runtime artifacts
 *.log
 !contributions.log
+*.pid
+*.seed
+*.tmp
+*.temp
 
-# trading bot outputs
-trades/
+# data and research
+data/
+logs/
+research_data/
 backtest_results/
+trades/
+*.pkl
+*.csv
+*.parquet
+*.h5
 
-# private keys and secrets
+# security sensitive
 keys/
 secrets/
+*.pem
+*.key
+wallet.json
+private_keys.txt
 
-# os generated files
+# system artifacts
 .DS_Store
 .DS_Store?
 ._*
@@ -35,9 +63,37 @@ secrets/
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.orig
 
-# research artifacts
-research_data/
-*.pkl
-*.csv
-*.json
+# jupyter artifacts
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# rust artifacts
+Cargo.lock
+target/
+**/*.rs.bk
+
+# go artifacts
+*.exe
+*.exe~
+*.test
+*.prof
+go.work
+
+# javascript artifacts
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+
+# c/cpp artifacts
+*.o
+*.obj
+*.out
+*.exe
+*.lib
+*.exp
+*.pdb

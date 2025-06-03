@@ -1,0 +1,43 @@
+{
+  "name": "mev-realtime-engine",
+  "version": "1.0.0",
+  "description": "high-performance webassembly-powered mev detection engine",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node --experimental-wasm-modules --max-old-space-size=8192 index.js",
+    "build": "npm run build:wasm && npm run build:ts",
+    "build:wasm": "emcc -O3 -s WASM=1 -s EXPORTED_FUNCTIONS='[\"_calculate_arbitrage\",\"_malloc\",\"_free\"]' -s MODULARIZE=1 -s EXPORT_NAME='WasmModule' src/wasm/arbitrage.c -o dist/arbitrage.js",
+    "build:ts": "tsc",
+    "test": "node --test test/*.test.js",
+    "benchmark": "node --expose-gc benchmarks/performance.js"
+  },
+  "dependencies": {
+    "ws": "^8.14.2",
+    "web3": "^4.3.0",
+    "ethers": "^6.8.1",
+    "uws": "github:uNetworking/uWS.js#v20.30.0",
+    "msgpack": "^1.0.3",
+    "sodium-native": "^4.0.4",
+    "level": "^8.0.0",
+    "pino": "^8.16.2",
+    "fastify": "^4.24.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "typescript": "^5.2.2",
+    "emscripten": "^3.1.45"
+  },
+  "keywords": [
+    "mev",
+    "arbitrage",
+    "webassembly",
+    "ethereum",
+    "defi",
+    "high-frequency",
+    "low-latency"
+  ]
+}

@@ -1,59 +1,78 @@
-# core blockchain interaction
+# ethereum blockchain primitives
 web3==6.11.3
 eth-abi==4.2.1
 eth-account==0.9.0
 eth-typing==3.5.2
+py-evm==0.7.0a4
 
-# mathematical computation
+# high-performance mathematical computation
 numpy==1.24.3
 scipy==1.11.2
 pandas==2.0.3
+numba==0.58.0
+cython==3.0.2
 
-# graph algorithms and optimization
+# graph algorithms and convex optimization
 networkx==3.1
 cvxpy==1.4.1
+ortools==9.7.2996
+igraph==0.10.8
 
-# async and networking
+# async networking and websocket management
 aiohttp==3.8.5
 websockets==11.0.3
 asyncio-throttle==1.0.2
+uvloop==0.17.0
+aiofiles==23.2.1
 
-# data visualization
+# data visualization and analysis
 matplotlib==3.7.2
 plotly==5.15.0
 seaborn==0.12.2
+bokeh==3.2.2
 
-# machine learning (optional)
+# machine learning frameworks
 scikit-learn==1.3.0
-# tensorflow==2.13.0  # uncomment for ml experiments
+xgboost==1.7.6
+lightgbm==4.1.0
+# torch==2.0.1  # uncomment for deep learning
+# tensorflow==2.13.0  # uncomment for tensorflow models
 
-# polyglot language bindings
-pyo3==0.20.0  # rust-python bindings
-cffi==1.16.0  # c foreign function interface
-ctypes-json==0.5.0  # enhanced ctypes support
+# polyglot language integration
+pyo3==0.20.0
+cffi==1.16.0
+ctypes-json==0.5.0
 
-# concurrency and performance
+# concurrency and memory management
 gevent==23.7.0
 multiprocessing-logging==0.3.4
 psutil==5.9.5
+pympler==0.9
+line-profiler==4.1.1
 
-# cryptography and security
+# cryptographic primitives
 cryptography==41.0.4
 ecdsa==0.18.0
+pycryptodome==3.19.0
 
-# database and caching
+# data storage and caching
 redis==5.0.0
 sqlalchemy==2.0.21
+lmdb==1.4.1
+rocksdb==0.8.0
 
-# testing and debugging
+# testing and benchmarking
 pytest==7.4.2
 pytest-asyncio==0.21.1
 pytest-benchmark==4.0.0
+pytest-xdist==3.3.1
 memory-profiler==0.61.0
+py-spy==0.3.14
 
-# development tools
+# development environment
 python-dotenv==1.0.0
 rich==13.5.2
 black==23.7.0
 isort==5.12.0
 mypy==1.5.1
+flake8==6.1.0

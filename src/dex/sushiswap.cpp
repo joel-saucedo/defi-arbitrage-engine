@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <unordered_map>
 #include <chrono>
+#include <string>
 
 namespace sushiswap {
 

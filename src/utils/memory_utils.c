@@ -104,30 +104,6 @@ static void init_memory_pool() {
     // Pre-allocate blocks for common sizes
     for (int i = 0; i < BLOCK_SIZES_COUNT; i++) {
         for (int j = 0; j < 100; j++) {
-            void* block = mev_malloc(global_pool->block_sizes[i]);
-            if (block) {
-                mev_free(block);
-            }
-        }
-    }
-}
-
-/*
- * Get size class index for given size
- */
-static inline int get_size_class(size_t size) {
-    for (int i = 0; i < BLOCK_SIZES_COUNT; i++) {
-        if (size <= STANDARD_BLOCK_SIZES[i]) {
-            return i;
-        }
-    }
-    return -1; // Size too large for pool
-}
-
-/*
- * High-performance memory allocation with pool management
- */
-void* mev_malloc(size_t size) {
     pthread_once(&pool_init_once, init_memory_pool);
     
     if (size == 0) return NULL;

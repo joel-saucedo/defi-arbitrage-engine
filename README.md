@@ -93,7 +93,53 @@ src/
 │   ├── asm_optimizations/   # hand-optimized mathematical primitives  
 │   ├── cpp_net/             # network layer with kernel bypass
 │   ├── go_concurrent/       # parallel mempool processing
-│   └── js_wasm/             # browser-compatible execution
+│   ├── js_wasm/             # browser-compatible execution
+│   ├── mev_master_engine.py # master orchestration engine
+│   └── polyglot_engine.py   # cross-language integration
+├── algorithms/              # trading strategy implementations
+├── dex/                     # decentralized exchange integrations
+├── monitoring/              # real-time blockchain analysis
+├── utils/                   # shared mathematical libraries
+├── tests/                   # comprehensive test suites
+├── research/                # academic research papers
+├── notebooks/               # performance analysis dashboards
+└── orchestrator.py          # system initialization & deployment
+```
+
+## 🚀 system orchestration
+
+### one-command initialization
+```bash
+# initialize, build, and start complete mev system
+make orchestrate
+```
+
+### granular control
+```bash
+# build all polyglot components
+make init-system
+
+# run comprehensive performance tests
+make test-performance  
+
+# start mev master engine
+make start-engine
+
+# real-time performance monitoring
+make monitor
+```
+
+### advanced deployment
+```bash
+# production-ready build with optimizations
+make production-build
+
+# docker containerization
+make docker-build
+
+# performance profiling
+make profile
+```
 ├── algorithms/              # trading strategy implementations
 ├── dex/                     # decentralized exchange integrations
 ├── monitoring/              # real-time blockchain analysis

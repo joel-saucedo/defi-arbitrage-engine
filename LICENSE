@@ -1,24 +1,44 @@
-MIT License
+ETHEREUM MEV RESEARCH RESTRICTIVE LICENSE
 
 Copyright (c) 2025 Ethereum MEV Research Laboratory
+All Rights Reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. DEFINITIONS
+   "Software" refers to the ethereum-mev-research codebase and all associated 
+   documentation, algorithms, and implementation files.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. PERMITTED USES
+   Subject to the terms of this license, you are granted limited rights to:
+   a) View and study the source code for educational purposes only
+   b) Fork the repository for personal research and development
+   c) Use the software for academic research and non-commercial analysis
+   d) Cite the software in academic publications with proper attribution
+
+3. PROHIBITED USES
+   You may NOT:
+   a) Use this software for any commercial trading or financial gain
+   b) Deploy this software in production trading environments
+   c) Redistribute, sell, or sublicense the software or derivatives
+   d) Remove or modify copyright notices or license terms
+   e) Use the software for market manipulation or illegal activities
+   f) Create competing commercial products based on this software
+
+4. RESTRICTIONS
+   - No commercial use without explicit written permission
+   - No redistribution of source code or binaries
+   - No creation of derivative works for commercial purposes
+   - Research use must include attribution to original authors
+
+5. ATTRIBUTION REQUIREMENTS
+   Any academic use must include the following in citation:
+   "Ethereum MEV Research Laboratory. High-Frequency Arbitrage Detection Engine. 
+   https://github.com/joel-saucedo/defi-arbitrage-engine (2025)"
+
+6. WARRANTY DISCLAIMER
+   THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.
+   THE AUTHORS DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED.
 
 ---
 

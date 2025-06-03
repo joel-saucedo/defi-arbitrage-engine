@@ -10,6 +10,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"math/big"
 	"runtime"
 	"sync"
 	"sync/atomic"
@@ -363,9 +364,14 @@ func (w *Worker) processTransaction(tx *Transaction) {
 	}()
 	
 	// fetch full transaction details
-	fullTx, err := w.processor.client.TransactionByHash(w.processor.ctx, tx.Hash)
+	fullTx, _, err := w.processor.client.TransactionByHash(w.processor.ctx, tx.Hash)
 	if err != nil {
 		atomic.AddUint64(&w.metrics.ErrorCount, 1)
+		return
+	}
+	
+	// skip if transaction is not found
+	if fullTx == nil {
 		return
 	}
 	

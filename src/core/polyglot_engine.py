@@ -27,12 +27,27 @@ from typing import Dict, Optional, Union, Awaitable, TypeVar, Generic
 from weakref import WeakValueDictionary
 
 import aiohttp
-from web3 import Web3, AsyncWeb3
-from web3.middleware import geth_poa_middleware
+try:
+    from web3 import Web3, AsyncWeb3
+    from web3.middleware import geth_poa_middleware
+except ImportError:
+    # fallback for newer web3.py versions
+    try:
+        from web3 import Web3
+        AsyncWeb3 = Web3  # fallback
+        from web3.middleware import ExtraDataToPOAMiddleware as geth_poa_middleware
+    except ImportError:
+        # ultimate fallback
+        Web3 = None
+        AsyncWeb3 = None
+        geth_poa_middleware = None
 from web3.providers import HTTPProvider, AsyncHTTPProvider
 from web3.types import Wei, HexBytes, BlockNumber
 from dotenv import load_dotenv
-import ujson as json
+try:
+    import ujson as json
+except ImportError:
+    import json
 from eth_typing import Address, Hash32
 import numpy as np
 

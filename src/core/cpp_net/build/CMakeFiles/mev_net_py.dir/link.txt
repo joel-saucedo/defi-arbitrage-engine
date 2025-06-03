@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -flto -shared  -o lib/mev_net_py.cpython-310-x86_64-linux-gnu.so CMakeFiles/mev_net_py.dir/src/python_bindings.cpp.o  -Wl,-rpath,"/home/joelasaucedo/Development/Git Repos/ethereum-mev-research/src/core/cpp_net/build/lib:" lib/libmev_network.so /usr/lib/x86_64-linux-gnu/libboost_system.so.1.74.0 

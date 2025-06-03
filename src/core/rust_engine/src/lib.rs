@@ -6,14 +6,11 @@
 
 use pyo3::prelude::*;
 use pyo3_asyncio::tokio::future_into_py;
-use std::collections::HashMap;
 use std::sync::Arc;
 use tokio::sync::RwLock;
 use dashmap::DashMap;
 use rayon::prelude::*;
 use serde::{Deserialize, Serialize};
-use num_bigint::BigUint;
-use primitive_types::{H160, H256, U256};
 
 /// compile-time constants for zero-allocation optimization
 const MAX_POOL_SIZE: usize = 10_000;
@@ -126,7 +123,7 @@ impl ArbitrageEngine {
         let opportunities: Vec<ArbitrageOpportunity> = pools
             .par_iter()
             .flat_map(|pool_entry| {
-                self.calculate_triangular_arbitrage(pool_entry.value(), min_profit)
+                self.calculate_triangular_arbitrage(pool_entry, min_profit)
                     .unwrap_or_default()
             })
             .filter(|opp| opp.profit_bps > min_profit)

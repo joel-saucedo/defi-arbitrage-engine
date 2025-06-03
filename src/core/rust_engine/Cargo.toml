@@ -12,14 +12,12 @@ pyo3 = { version = "0.20", features = ["extension-module"] }
 tokio = { version = "1.0", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-reqwest = { version = "0.11", features = ["json"] }
 rayon = "1.7"
 crossbeam = "0.8"
 dashmap = "5.4"
-web3 = "0.19"
-ethers = "2.0"
 num-bigint = "0.4"
-primitive-types = "0.12"
+
+# Removed ethers, web3, primitive-types, and reqwest to avoid ICU/crypto dependencies
 
 [dependencies.pyo3-asyncio]
 version = "0.20"

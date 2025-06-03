@@ -6,8 +6,6 @@
  * uses modern c++20 features with assembly-level optimizations
  */
 
-#pragma once
-
 #include <atomic>
 #include <memory>
 #include <vector>
@@ -15,10 +13,16 @@
 #include <chrono>
 #include <thread>
 #include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <algorithm>
+#include <string_view>
 #include <immintrin.h>  // simd intrinsics
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <netinet/tcp.h>
 #include <arpa/inet.h>
+#include <unistd.h>
 
 namespace mev {
 
@@ -41,17 +45,10 @@ struct alignas(CACHE_LINE_SIZE) Transaction {
     char data[1024];     // transaction data (truncated)
     uint16_t data_len;
     
-    // simd-optimized hash comparison
+    // optimized hash comparison
     inline bool hash_equals(const char* other) const noexcept {
-        // use avx2 for 32-byte comparison
-        const __m256i* a = reinterpret_cast<const __m256i*>(hash);
-        const __m256i* b = reinterpret_cast<const __m256i*>(other);
-        
-        __m256i cmp1 = _mm256_cmpeq_epi8(_mm256_load_si256(a), _mm256_load_si256(b));
-        __m256i cmp2 = _mm256_cmpeq_epi8(_mm256_load_si256(a + 1), _mm256_load_si256(b + 1));
-        
-        return _mm256_movemask_epi8(cmp1) == 0xFFFFFFFF && 
-               _mm256_movemask_epi8(cmp2) == 0xFFFFFFFF;
+        // simple memcmp implementation for compatibility
+        return memcmp(hash, other, 66) == 0;
     }
 };
 
@@ -245,7 +242,9 @@ private:
         }
         
         // buffer the transaction
-        tx_buffer_.try_push(tx);
+        if (!tx_buffer_.try_push(tx)) {
+            // buffer full - drop transaction (could implement backpressure here)
+        }
     }
     
     // exponential moving average for latency tracking
